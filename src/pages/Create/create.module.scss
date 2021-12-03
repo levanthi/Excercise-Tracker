@@ -1,0 +1,53 @@
+@import '../../static/scss/global.scss';
+
+.create
+{
+    max-width: 400px;
+    margin: auto;
+    padding:20px;
+    color:$active-color;
+    text-align: center;
+    input{
+        width:100%;
+        padding:8px 15px;
+        border-radius: 3px;
+        border: unset;
+        // outline: 2px solid blue;
+        font-size: .95rem;
+        box-sizing: border-box;
+        &:focus{
+            outline: 2px blue solid;
+        }
+    }
+    h4{
+        margin-bottom: 14px;
+        margin-top: 40px;
+    }
+    textarea{
+        width: 100%;
+        // outline: 2px solid blue;
+        padding:8px 15px;
+        box-sizing: border-box;
+        resize: none;
+        font-size: .95rem;
+        height:72px;
+        &:focus{
+            outline: 2px blue solid;
+        }
+    }
+    button{
+        padding:10px;
+        color:white;
+        background-color:$active-color;
+        border-radius: 5px;
+        border: unset;
+        font-size: .9rem;
+        font-weight: bold;
+        margin-top: 40px;
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(233, 184, 69);
+        }
+    }
+}
+

@@ -1,0 +1,20 @@
+@import '../static/scss/global.scss';
+
+.navbar{
+    margin: 40px;
+    ul{
+        padding-left:0;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        li{
+            margin: 0 10px;
+            a{
+                @include button();
+                color: rgb(168, 146, 18);
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import '../../static//scss//global.scss';
+.home
+{
+    margin:auto;
+    padding:10px;
+}
+.tab
+{
+    display:flex;
+    justify-content: center;
+}
+.tabItem
+{
+    background-color: transparent;
+    border: unset;
+    color:white;
+    margin: 0 10px;
+    font-size: 1.1rem;
+    &:hover{
+        cursor: pointer;
+        opacity: .7;
+    }
+}
+.courseItem
+{
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    padding:10px 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 18px;
+    h4{
+        width:fit-content;
+        background-color:$active-color;
+        transform: skewX(-25deg);
+    }
+    button {
+        @include button();
+        border: unset;
+        color:white;
+        font-weight: 600;
+        margin: 2px 0;
+    }
+    .edit
+    {
+        padding:0;
+        a{
+            display: block;
+            padding:6px 10px;
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    .headingWrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

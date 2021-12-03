@@ -1,0 +1,36 @@
+$button-color:#d40187;
+$active-color:rgb(224, 167, 32);
+@mixin button {
+    background-color: rgb(212, 1, 135);
+    padding:6px 10px;
+    border-radius: 3px;
+    font-size: 1rem;
+    &:hover{
+        cursor: pointer;
+        opacity: .7;
+    }
+}
+@mixin mark {
+    &::before{
+        content:'';
+        position: absolute;
+        top:0;
+        bottom: 0;
+        width:6px;
+        left: 0;
+    }
+}
+.completed{
+    @include mark();
+    &::before{
+        background-color:$button-color;
+    }
+}
+.pending{
+    @include mark();
+    &::before{
+        background-color:$active-color;
+    }
+}
+
+
