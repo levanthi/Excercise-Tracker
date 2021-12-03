@@ -7,8 +7,8 @@ function Navbar()
     return (
         <div className={clsx(styles.navbar)}>
             <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/create'>Create Excercise</Link></li>
+                <li><Link to='/Excercise-Tracker/'>Home</Link></li>
+                <li><Link to='/Excercise-Tracker/create'>Create Excercise</Link></li>
             </ul>
         </div>
     )

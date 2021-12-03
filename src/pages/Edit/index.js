@@ -18,48 +18,48 @@ function getId(path)
 function Edit()
 {
 
-    const [inputTitle,setInputTitle] = useState('')
-    const [inputDesctiprion,setInputDesctiprion] = useState('')
+    const [excercise,setExcercise] = useState()
     const [returnHome,setReturnHome] = useState(false)
 
     const idRef = useRef(getId(useLocation().pathname))
     useEffect(()=>{
-        axios.get(`https://my-json-server.typicode.com/levanthi/Excercise-Tracker/excercise/${idRef.current}`)
+        axios.get(`https://61a9915033e9df0017ea3e37.mockapi.io/excercise/${idRef.current}`)
             .then((res)=>{
-                setInputTitle(res.data.name)
-                setInputDesctiprion(res.data.description)
+                setExcercise(res.data)
             })
             .catch(err=>console.log(err))
     },[])
-
     function handleSubmit()
     {
-        if(setInputTitle==='' || inputDesctiprion==='')
+        if(excercise.name==='' || excercise.description==='')
             return
-        axios.patch(`https://my-json-server.typicode.com/levanthi/Excercise-Tracker/excercise/${idRef.current}`,{
-            name:inputTitle,
-            description:inputDesctiprion,
+        axios.put(`https://61a9915033e9df0017ea3e37.mockapi.io/excercise/${idRef.current}`,{
+            ...excercise
         })
             .then(()=>setReturnHome(true))
             .catch(err=>console.log(err))
     }
-
+    console.log(excercise)
     return(
         <div className={clsx(styles.create)}>
-            {returnHome===true?<Navigate to='/'/>:undefined}
-            <h4>TITLE</h4>
-            <input 
-                value={inputTitle} 
-                onChange={(e)=>setInputTitle(e.target.value)} 
-                placeholder="Enter subject name" 
-            />
-            <h4>DETAILS</h4>
-            <textarea 
-                placeholder='Enter excercise detail here...'
-                value={inputDesctiprion}
-                onChange={(e)=>setInputDesctiprion(e.target.value)}
-            />
-            <button onClick={handleSubmit}>Update Excercise</button>
+            {returnHome===true?<Navigate to='/Excercise-Tracker'/>:undefined}
+            {excercise?
+                <>
+                    <h4>TITLE</h4>
+                    <input 
+                        value={excercise.name} 
+                        onChange={(e)=>setExcercise({...excercise,name:e.target.value})} 
+                        placeholder="Enter subject name" 
+                    />
+                    <h4>DETAILS</h4>
+                    <textarea 
+                        placeholder='Enter excercise detail here...'
+                        value={excercise.description}
+                        onChange={(e)=>setExcercise({...excercise,description:e.target.value})}
+                    />
+                    <button onClick={()=>handleSubmit()}>Update Excercise</button>
+                </>:''
+            }
         </div>
     )
 }

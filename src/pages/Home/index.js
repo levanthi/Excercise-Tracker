@@ -36,7 +36,7 @@ function Home()
 
     useEffect(()=>{
         
-        getExcercise.current = ()=>{axios.get('https://my-json-server.typicode.com/levanthi/Excercise-Tracker/excercise')
+        getExcercise.current = ()=>{axios.get('https://61a9915033e9df0017ea3e37.mockapi.io/excercise')
             .then(res=>{
                 setViewAll(res.data)
                 setCompleted(res.data.filter((item)=>{
@@ -51,17 +51,17 @@ function Home()
         getExcercise.current()
     },[])
 
-    function handleToggle(id,status)
+    function handleToggle(excercise)
     {
-        let statusUpdate = status==='completed'?'pending':'completed'
-        axios.patch(`https://my-json-server.typicode.com/levanthi/Excercise-Tracker/excercise/${id}`,{status:statusUpdate})
+        let statusUpdate = excercise.status==='completed'?'pending':'completed'
+        axios.put(`https://61a9915033e9df0017ea3e37.mockapi.io/excercise/${excercise.id}`,{...excercise,status:statusUpdate})
             .then(()=>getExcercise.current())
             .catch(err=>console.log(err))
     }
 
     function handleDelete(id)
     {
-        axios.delete(`https://my-json-server.typicode.com/levanthi/Excercise-Tracker/excercise/${id}`)
+        axios.delete(`https://61a9915033e9df0017ea3e37.mockapi.io/excercise/${id}`)
             .then(()=>getExcercise.current())
             .catch(err=>console.log(err))
     }    
@@ -101,8 +101,8 @@ function Home()
                                     <div><h4>{excercise.name}</h4></div>
                                     <div>
                                         <button onClick={()=>handleDelete(excercise.id)}>Delete</button>
-                                        <button className={clsx(styles.edit)}><Link to={`/edit/${excercise.id}`}>Edit</Link></button>
-                                        <button onClick={()=>handleToggle(excercise.id,excercise.status)}>Toggle</button>
+                                        <button className={clsx(styles.edit)}><Link to={`/Excercise-Tracker/edit/${excercise.id}`}>Edit</Link></button>
+                                        <button onClick={()=>handleToggle(excercise)}>Toggle</button>
                                     </div>
                                 </div>
                                 <p>{excercise.description}</p>

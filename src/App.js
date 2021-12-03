@@ -8,15 +8,13 @@ import Edit from './pages/Edit'
 
 
 function App() {
-
-  
   return (
     <div className="App">
       <Navbar/>
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/create' element={<Create/>}></Route>
-        <Route path='/edit/:slug' element={<Edit/>}></Route>
+        <Route path='/Excercise-Tracker/' element={<Home/>}></Route>
+        <Route path='/Excercise-Tracker/create' element={<Create/>}></Route>
+        <Route path='/Excercise-Tracker/edit/:slug' element={<Edit/>}></Route>
       </Routes>
     </div>
   )

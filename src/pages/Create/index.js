@@ -15,7 +15,7 @@ function Create()
     {
         if(setInputTitle==='' || inputDesctiprion==='')
             return
-        axios.post('https://my-json-server.typicode.com/levanthi/Excercise-Tracker/excercise',{
+        axios.post('https://61a9915033e9df0017ea3e37.mockapi.io/excercise',{
             name:inputTitle,
             description:inputDesctiprion,
             status:'pending'
@@ -25,7 +25,7 @@ function Create()
     }
     return(
         <div className={clsx(styles.create)}>
-            {returnHome===true?<Navigate to='/'/>:undefined}
+            {returnHome===true?<Navigate to='/Excercise-Tracker'/>:undefined}
             <h4>TITLE</h4>
             <input 
                 value={inputTitle} 
