@@ -9,6 +9,10 @@
     display:flex;
     justify-content: center;
 }
+.courseList
+{
+    padding-left:0;
+}
 .tabItem
 {
     background-color: transparent;
@@ -63,5 +67,13 @@
             display: flex;
             flex-direction: column;
         }
+    }
+}
+
+@media (max-width:739px)
+{
+    .tabItem
+    {
+        margin: 0 3px;
     }
 }
