@@ -18,3 +18,12 @@
         }
     }
 }
+
+@media (max-width:739px)
+{
+    a{
+        &:active{
+            background-color: #f84ab8 !important;
+        }
+    }
+}

@@ -76,4 +76,17 @@
     {
         margin: 0 3px;
     }
+    button,a{
+        &:hover{
+            opacity: 1 !important;
+        }
+    }
+    .headingWrap{
+        button{
+           &:active
+           {
+               background-color: #f84ab8;
+           }
+       }
+    }
 }

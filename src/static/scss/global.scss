@@ -10,6 +10,7 @@ $active-color:rgb(224, 167, 32);
         opacity: .7;
     }
 }
+
 @mixin mark {
     &::before{
         content:'';

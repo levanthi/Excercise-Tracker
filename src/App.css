@@ -17,3 +17,6 @@ body{
 .active{
   color:rgb(224, 167, 32) !important;
 }
+a,button{
+  -webkit-tap-highlight-color: transparent;
+}
