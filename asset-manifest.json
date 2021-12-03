@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Excercise-Tracker/static/css/main.ea45092c.chunk.css",
+    "main.css": "/Excercise-Tracker/static/css/main.6f2dd88c.chunk.css",
     "main.js": "/Excercise-Tracker/static/js/main.181a8219.chunk.js",
     "main.js.map": "/Excercise-Tracker/static/js/main.181a8219.chunk.js.map",
     "runtime-main.js": "/Excercise-Tracker/static/js/runtime-main.16e30dd2.js",
@@ -10,14 +10,14 @@
     "static/js/3.de2a278a.chunk.js": "/Excercise-Tracker/static/js/3.de2a278a.chunk.js",
     "static/js/3.de2a278a.chunk.js.map": "/Excercise-Tracker/static/js/3.de2a278a.chunk.js.map",
     "index.html": "/Excercise-Tracker/index.html",
-    "static/css/main.ea45092c.chunk.css.map": "/Excercise-Tracker/static/css/main.ea45092c.chunk.css.map",
+    "static/css/main.6f2dd88c.chunk.css.map": "/Excercise-Tracker/static/css/main.6f2dd88c.chunk.css.map",
     "static/js/2.e6acb643.chunk.js.LICENSE.txt": "/Excercise-Tracker/static/js/2.e6acb643.chunk.js.LICENSE.txt",
     "static/media/App.css": "/Excercise-Tracker/static/media/chon-loc-101-hinh-nen-powerpoint-dep-cung-background-full-hd-10.a79edae3.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.16e30dd2.js",
     "static/js/2.e6acb643.chunk.js",
-    "static/css/main.ea45092c.chunk.css",
+    "static/css/main.6f2dd88c.chunk.css",
     "static/js/main.181a8219.chunk.js"
   ]
 }
