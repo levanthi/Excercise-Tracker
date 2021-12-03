@@ -11,6 +11,7 @@ body{
   background-attachment: fixed;
   font-family: sans-serif;
   padding-bottom: 30px;
+  box-sizing: border-box;
 }
 
 .active{
