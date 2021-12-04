@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import styles from './home.module.scss'
 import { Link } from 'react-router-dom'
+import Loading from '../../Loading'
 
 // function getActiveIndex()
 // {
@@ -21,7 +22,7 @@ import { Link } from 'react-router-dom'
 
 function Home()
 {
-    const [viewAll,setViewAll] = useState([])
+    const [viewAll,setViewAll] = useState()
     const [completed,setCompleted] = useState([])
     const [pending,setPending] = useState([])
     const [render,setRender] = useState(true)
@@ -86,9 +87,10 @@ function Home()
                 <button className={clsx(styles.tabItem)}>COMPLETED</button>
                 <button className={clsx(styles.tabItem)}>PENDING</button>
             </div>
+            {viewAll?'':<Loading/>}
             <ul className={clsx(styles.courseList)}>
                 {
-                   renderTab.current[tabIndex.current].map((excercise)=>{
+                   viewAll?renderTab.current[tabIndex.current].map((excercise)=>{
                         return(
                             <li 
                                 key={excercise.id}
@@ -108,7 +110,7 @@ function Home()
                                 <p>{excercise.description}</p>
                             </li>
                         )
-                    })
+                    }):''
                 }
             </ul>
         </div>
